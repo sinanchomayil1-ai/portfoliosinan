@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="etlBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#05080e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#etlBg)"/>
+
+  <!-- Pipeline Diagram Nodes -->
+  <!-- Node 1: Sources -->
+  <g transform="translate(80, 220)">
+    <rect width="250" height="340" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <rect x="20" y="25" width="210" height="50" rx="8" fill="#1e293b"/>
+    <text x="40" y="56" fill="#38bdf8" font-family="sans-serif" font-size="16" font-weight="bold">1. DATA INGESTION</text>
+    <text x="30" y="120" fill="#cbd5e1" font-family="monospace" font-size="14">▶ MySQL Database</text>
+    <text x="30" y="165" fill="#cbd5e1" font-family="monospace" font-size="14">▶ RESTful APIs</text>
+    <text x="30" y="210" fill="#cbd5e1" font-family="monospace" font-size="14">▶ Raw CSV / Excel</text>
+    <text x="30" y="270" fill="#10b981" font-family="monospace" font-size="13">Batch Size: 500K Rows</text>
+  </g>
+
+  <!-- Flow Arrow 1 -->
+  <path d="M340 390 H460" stroke="#38bdf8" stroke-width="4" stroke-dasharray="8 6"/>
+
+  <!-- Node 2: Transformation Engine -->
+  <g transform="translate(470, 180)">
+    <rect width="280" height="420" rx="14" fill="#0f172a" stroke="#0284c7" stroke-width="2.5"/>
+    <rect x="20" y="25" width="240" height="50" rx="8" fill="#0369a1"/>
+    <text x="35" y="56" fill="#f8fafc" font-family="sans-serif" font-size="16" font-weight="bold">2. PYTHON &amp; PANDAS</text>
+    
+    <text x="30" y="125" fill="#93c5fd" font-family="monospace" font-size="13">• Data Deduplication</text>
+    <text x="30" y="165" fill="#93c5fd" font-family="monospace" font-size="13">• Missing Value Imputation</text>
+    <text x="30" y="205" fill="#93c5fd" font-family="monospace" font-size="13">• Schema Standardization</text>
+    <text x="30" y="245" fill="#93c5fd" font-family="monospace" font-size="13">• Outlier Trimming (IQR)</text>
+    
+    <rect x="20" y="285" width="240" height="95" rx="8" fill="#020617"/>
+    <text x="32" y="318" fill="#38bdf8" font-family="monospace" font-size="12">df['revenue'] = df['qty'] * ...</text>
+    <text x="32" y="345" fill="#a78bfa" font-family="monospace" font-size="12">df.dropna(subset=['id'])</text>
+  </g>
+
+  <!-- Flow Arrow 2 -->
+  <path d="M760 390 H880" stroke="#10b981" stroke-width="4" stroke-dasharray="8 6"/>
+
+  <!-- Node 3: Analytics Staging -->
+  <g transform="translate(890, 220)">
+    <rect width="240" height="340" rx="14" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+    <rect x="20" y="25" width="200" height="50" rx="8" fill="#065f46"/>
+    <text x="35" y="56" fill="#f8fafc" font-family="sans-serif" font-size="16" font-weight="bold">3. WAREHOUSE</text>
+    <text x="30" y="120" fill="#a7f3d0" font-family="monospace" font-size="14">✔ Staged Clean Tables</text>
+    <text x="30" y="165" fill="#a7f3d0" font-family="monospace" font-size="14">✔ Partitioned Views</text>
+    <text x="30" y="210" fill="#a7f3d0" font-family="monospace" font-size="14">✔ Auto Daily Refresh</text>
+    <text x="30" y="270" fill="#facc15" font-family="monospace" font-size="13">Latency: &lt; 2.4 min</text>
+  </g>
+</svg>

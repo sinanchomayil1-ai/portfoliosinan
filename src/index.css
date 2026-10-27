@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  2% { opacity: 0.2; }
+  3% { opacity: 1; }
+  6% { opacity: 0.5; }
+  7% { opacity: 1; }
+  9% { opacity: 0.1; }
+  10% { opacity: 1; }
+  11% { opacity: 0.3; }
+  14% { opacity: 1; }
+  20% { opacity: 0.6; }
+  25% { opacity: 1; }
+  30% { opacity: 0.2; }
+  31% { opacity: 1; }
+  40% { opacity: 0.4; }
+  41% { opacity: 1; }
+  60% { opacity: 0.3; }
+  61% { opacity: 1; }
+  65% { opacity: 0.8; }
+  70% { opacity: 1; }
+  80% { opacity: 0.5; }
+  81% { opacity: 1; }
+  90% { opacity: 0.2; }
+  91% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.flicker {
+  animation: 4.5s infinite flicker;
+}
+
+@keyframes blob {
+  0%, 100% {
+    border-radius: 50% 45% 47% 53% / 53% 47% 45% 50%;
+  }
+  25% {
+    border-radius: 47% 53% 50% 45% / 45% 50% 53% 47%;
+  }
+  50% {
+    border-radius: 53% 47% 45% 50% / 50% 45% 47% 53%;
+  }
+  75% {
+    border-radius: 45% 50% 53% 47% / 47% 53% 50% 45%;
+  }
+}
+
+.blob-cursor {
+  animation: 4s ease-in-out infinite blob;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

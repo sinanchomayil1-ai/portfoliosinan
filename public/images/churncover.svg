@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="churnBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#110d19"/>
+      <stop offset="100%" stop-color="#08050e"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#churnBg)"/>
+
+  <!-- Top Title -->
+  <g transform="translate(50, 40)">
+    <rect width="1100" height="60" rx="10" fill="#1e152d" stroke="#3b2d56"/>
+    <text x="30" y="38" fill="#f8fafc" font-family="sans-serif" font-size="18" font-weight="bold">Predictive Customer Churn &amp; Lifetime Value (LTV) Analytics</text>
+  </g>
+
+  <!-- Left Graph: Feature Importance -->
+  <g transform="translate(50, 130)">
+    <rect width="520" height="580" rx="14" fill="#181124" stroke="#3b2d56"/>
+    <text x="30" y="45" fill="#f8fafc" font-family="sans-serif" font-size="17" font-weight="bold">Feature Importance (Random Forest)</text>
+    
+    <!-- Feature 1 -->
+    <text x="30" y="105" fill="#cbd5e1" font-family="monospace" font-size="13">Monthly Charges</text>
+    <rect x="30" y="118" width="380" height="20" rx="5" fill="url(#purpleGrad)"/>
+    <text x="420" y="133" fill="#f472b6" font-family="monospace" font-size="12">0.32</text>
+
+    <!-- Feature 2 -->
+    <text x="30" y="175" fill="#cbd5e1" font-family="monospace" font-size="13">Contract Tenure (Months)</text>
+    <rect x="30" y="188" width="310" height="20" rx="5" fill="url(#purpleGrad)"/>
+    <text x="350" y="203" fill="#f472b6" font-family="monospace" font-size="12">0.26</text>
+
+    <!-- Feature 3 -->
+    <text x="30" y="245" fill="#cbd5e1" font-family="monospace" font-size="13">Support Tickets Logged</text>
+    <rect x="30" y="258" width="240" height="20" rx="5" fill="url(#purpleGrad)"/>
+    <text x="280" y="273" fill="#f472b6" font-family="monospace" font-size="12">0.19</text>
+
+    <!-- Feature 4 -->
+    <text x="30" y="315" fill="#cbd5e1" font-family="monospace" font-size="13">Payment Method</text>
+    <rect x="30" y="328" width="160" height="20" rx="5" fill="url(#purpleGrad)"/>
+    <text x="200" y="343" fill="#f472b6" font-family="monospace" font-size="12">0.12</text>
+
+    <!-- Model Stats -->
+    <rect x="30" y="400" width="460" height="130" rx="10" fill="#251b38"/>
+    <text x="50" y="440" fill="#f8fafc" font-family="sans-serif" font-size="15" font-weight="bold">Model Performance Metrics</text>
+    <text x="50" y="475" fill="#a78bfa" font-family="monospace" font-size="14">ROC-AUC: 0.924  |  Precision: 0.88</text>
+    <text x="50" y="505" fill="#10b981" font-family="monospace" font-size="14">Recall: 0.86    |  F1-Score: 0.87</text>
+  </g>
+
+  <!-- Right Graph: Tableau Risk Scatter -->
+  <g transform="translate(610, 130)">
+    <rect width="540" height="580" rx="14" fill="#181124" stroke="#3b2d56"/>
+    <text x="30" y="45" fill="#f8fafc" font-family="sans-serif" font-size="17" font-weight="bold">Tableau Churn Risk Clustering</text>
+
+    <!-- Scatter dots -->
+    <circle cx="120" cy="180" r="8" fill="#ef4444" opacity="0.8"/>
+    <circle cx="180" cy="140" r="11" fill="#ef4444" opacity="0.8"/>
+    <circle cx="210" cy="220" r="9" fill="#ef4444" opacity="0.8"/>
+    <circle cx="150" cy="270" r="12" fill="#ef4444" opacity="0.8"/>
+    
+    <circle cx="360" cy="380" r="10" fill="#10b981" opacity="0.8"/>
+    <circle cx="420" cy="420" r="14" fill="#10b981" opacity="0.8"/>
+    <circle cx="330" cy="460" r="8" fill="#10b981" opacity="0.8"/>
+    <circle cx="470" cy="350" r="11" fill="#10b981" opacity="0.8"/>
+
+    <text x="100" y="320" fill="#fca5a5" font-family="sans-serif" font-size="14" font-weight="bold">High Churn Risk (Cohort A)</text>
+    <text x="300" y="510" fill="#86efac" font-family="sans-serif" font-size="14" font-weight="bold">Loyal Customers (Cohort B)</text>
+  </g>
+</svg>
